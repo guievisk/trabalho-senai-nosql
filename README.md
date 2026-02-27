@@ -1,43 +1,53 @@
-# Pesquisa: Bancos de Dados Não-Relacionais (NoSQL)
+# 📊 Pesquisa: Bancos de Dados NoSQL (SENAI)
 
-Este repositório contém a pesquisa realizada para a disciplina do SENAI sobre bancos de dados NoSQL.
+> Repositório criado para documentar o estudo sobre tecnologias de bancos de dados não-relacionais.
 
- 1. Definição e Características
+---
 
-*   **a) O que caracteriza um banco de dados não-relacional?**
-    Diferente dos bancos SQL tradicionais, eles não utilizam o modelo de tabelas rígidas com linhas e colunas. Eles são caracterizados por terem esquemas flexíveis (schemaless), alta escalabilidade horizontal e serem otimizados para tipos específicos de dados (documentos, grafos, etc).
-*   **b) Vantagens em relação aos bancos relacionais:**
-    Flexibilidade no armazenamento de dados não estruturados, facilidade de expansão (escalabilidade) e performance superior para grandes volumes de leitura/escrita em tempo real.
-*   **c) 3 situações práticas indicadas:**
-    1. Sistemas de Big Data e análise em tempo real.
-    2. Gestão de conteúdo (CMS) e catálogos de produtos com atributos variáveis.
-    3. Aplicações de IoT (Internet das Coisas) que geram fluxos massivos de dados.
+## 📋 Enunciado da Atividade
+![Enunciado](ATIVIDADE.png)
 
-## 2. Tipos de Bancos de Dados Não-Relacionais
+---
 
-### a) Diferenças entre os tipos:
-*   **Orientados a Documentos:** Armazenam dados em documentos (como JSON ou BSON). Ex: MongoDB.
-*   **Chave-Valor:** O modelo mais simples, onde um valor é acessado por uma chave única. Ex: Redis.
-*   **Colunas Amplas (Wide-Column):** Armazenam dados em famílias de colunas, otimizados para consultas em grandes datasets. Ex: Cassandra.
-*   **Grafos:** Focados em relacionamentos entre entidades usando nós e arestas. Ex: Neo4j.
+## 1. Definição e Características
 
-### b) Exemplos de Ferramentas:
-*   **Documentos:** MongoDB, CouchDB.
-*   **Chave-Valor:** Redis, Amazon DynamoDB.
-*   **Colunas:** Apache Cassandra, HBase.
-*   **Grafos:** Neo4j, ArangoDB.
+*   **O que caracteriza um NoSQL?** 
+    Diferente dos bancos SQL, eles não utilizam tabelas rígidas. São caracterizados por esquemas flexíveis, alta escalabilidade horizontal e otimização para dados não estruturados.
+*   **Vantagens:** 
+    Flexibilidade, facilidade de expansão e alta performance para grandes volumes de dados.
+*   **3 Situações Práticas:**
+    1. Big Data e análise em tempo real.
+    2. Gestão de Conteúdo (CMS) com atributos variáveis.
+    3. Aplicações de IoT (Internet das Coisas).
+
+---
+
+## 2. Tipos de Bancos de Dados NoSQL
+
+| Tipo | Descrição | Exemplos |
+| :--- | :--- | :--- |
+| **Documentos** | Armazena dados em JSON/BSON | MongoDB, CouchDB |
+| **Chave-Valor** | Simples e ultrarrápido (chave única) | Redis, DynamoDB |
+| **Colunas** | Otimizado para grandes volumes | Cassandra, HBase |
+| **Grafos** | Focado em relacionamentos complexos | Neo4j, ArangoDB |
+
+---
 
 ## 3. Comparação Prática
 
-*   **a) Relacional vs. Grafos:** No relacional, as relações são feitas via chaves estrangeiras (JOINs caros). No banco de grafos, o relacionamento é um dado nativo, permitindo percorrer conexões complexas com extrema rapidez.
-*   **b) Redes Sociais:** O banco de **Grafos** seria o mais adequado. Justificativa: Redes sociais dependem fortemente de conexões (amigo do amigo, sugestões de seguimento), e os grafos gerenciam essas relações de forma muito mais eficiente que tabelas.
+*   **Relacional vs. Grafos:** No relacional, as relações exigem "JOINs" lentos. Em grafos, a conexão é um dado nativo, sendo muito mais rápido para redes complexas.
+*   **Redes Sociais:** O mais adequado é o **Banco de Grafos**, pois ele lida de forma nativa com amizades e conexões (nós e arestas).
+
+---
 
 ## 4. Escalabilidade e Flexibilidade
 
-*   **a) Escalabilidade Horizontal:** Ao contrário da vertical (comprar um servidor mais potente), a horizontal consiste em adicionar mais máquinas comuns (nós) ao sistema. O banco NoSQL distribui os dados entre esses vários servidores automaticamente (sharding).
-*   **b) Flexibilidade de Schema:** É importante porque permite que cada documento tenha uma estrutura diferente. Se você precisar adicionar um campo novo a um registro, não precisa alterar a estrutura de toda a tabela ou parar o banco.
+*   **Escalabilidade Horizontal:** Consiste em adicionar mais servidores ao sistema (em vez de apenas um potente), permitindo que o banco cresça conforme a demanda.
+*   **Flexibilidade de Schema:** É vital em bancos de documentos para permitir mudanças rápidas no software sem precisar migrar ou travar a base de dados.
 
-## 5. Estudo de Caso
+---
 
-*   **a) Empresa:** Netflix.
-*   **b) Uso e Benefícios:** A Netflix utiliza o **Apache Cassandra** para gerenciar o histórico de visualização e as preferências de milhões de usuários globalmente. O benefício principal é a alta disponibilidade e a latência extremamente baixa, garantindo que o serviço nunca fique fora do ar, mesmo que um servidor falhe em algum lugar do mundo.
+## 5. Estudo de Caso: Netflix 🍿
+
+A **Netflix** utiliza o **Apache Cassandra** para gerenciar o histórico de milhões de usuários. 
+**Benefícios:** Isso garante que o serviço nunca fique fora do ar (alta disponibilidade) e que a sua lista de filmes carregue instantaneamente em qualquer lugar do mundo.
